@@ -242,6 +242,10 @@ class Gs2ShowcaseClient(AbstractGs2Client):
             body["currencyMoneyName"] = request.get_currency_money_name()
         if request.get_currency_gold_name() is not None:
             body["currencyGoldName"] = request.get_currency_gold_name()
+        if request.get_currency_consumable_item_item_pool_name() is not None:
+            body["currencyConsumableItemItemPoolName"] = request.get_currency_consumable_item_item_pool_name()
+        if request.get_currency_consumable_item_item_name() is not None:
+            body["currencyConsumableItemItemName"] = request.get_currency_consumable_item_item_name()
         if request.get_currency_option() is not None:
             body["currencyOption"] = request.get_currency_option()
         if request.get_item_money_name() is not None:
@@ -254,6 +258,10 @@ class Gs2ShowcaseClient(AbstractGs2Client):
             body["itemConsumableItemItemPoolName"] = request.get_item_consumable_item_item_pool_name()
         if request.get_item_consumable_item_item_name() is not None:
             body["itemConsumableItemItemName"] = request.get_item_consumable_item_item_name()
+        if request.get_item_gacha_gacha_pool_name() is not None:
+            body["itemGachaGachaPoolName"] = request.get_item_gacha_gacha_pool_name()
+        if request.get_item_gacha_gacha_name() is not None:
+            body["itemGachaGachaName"] = request.get_item_gacha_gacha_name()
         if request.get_item_option() is not None:
             body["itemOption"] = request.get_item_option()
         if request.get_open_condition_type() is not None:
@@ -374,6 +382,10 @@ class Gs2ShowcaseClient(AbstractGs2Client):
             body["currencyMoneyName"] = request.get_currency_money_name()
         if request.get_currency_gold_name() is not None:
             body["currencyGoldName"] = request.get_currency_gold_name()
+        if request.get_currency_consumable_item_item_pool_name() is not None:
+            body["currencyConsumableItemItemPoolName"] = request.get_currency_consumable_item_item_pool_name()
+        if request.get_currency_consumable_item_item_name() is not None:
+            body["currencyConsumableItemItemName"] = request.get_currency_consumable_item_item_name()
         if request.get_currency_option() is not None:
             body["currencyOption"] = request.get_currency_option()
         if request.get_item_money_name() is not None:
@@ -386,6 +398,10 @@ class Gs2ShowcaseClient(AbstractGs2Client):
             body["itemConsumableItemItemPoolName"] = request.get_item_consumable_item_item_pool_name()
         if request.get_item_consumable_item_item_name() is not None:
             body["itemConsumableItemItemName"] = request.get_item_consumable_item_item_name()
+        if request.get_item_gacha_gacha_pool_name() is not None:
+            body["itemGachaGachaPoolName"] = request.get_item_gacha_gacha_pool_name()
+        if request.get_item_gacha_gacha_name() is not None:
+            body["itemGachaGachaName"] = request.get_item_gacha_gacha_name()
         if request.get_item_option() is not None:
             body["itemOption"] = request.get_item_option()
         if request.get_open_condition_type() is not None:

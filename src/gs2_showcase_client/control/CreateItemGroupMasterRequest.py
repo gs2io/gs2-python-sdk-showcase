@@ -115,7 +115,7 @@ class CreateItemGroupMasterRequest(Gs2BasicRequest):
         :param item_names: 販売している商品名のリスト
         :type item_names: list[unicode]
         """
-        if item_names and not isinstance(item_names, list[unicode]):
+        if item_names and not isinstance(item_names, list):
             raise TypeError(type(item_names))
         self.__item_names = item_names
 

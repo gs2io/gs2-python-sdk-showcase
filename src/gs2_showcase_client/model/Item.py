@@ -25,6 +25,8 @@ class Item(object):
             self.__currency_type = None
             self.__currency_money_name = None
             self.__currency_gold_name = None
+            self.__currency_consumable_item_item_pool_name = None
+            self.__currency_consumable_item_name = None
             self.__currency_option = None
             self.__price = None
             self.__item_type = None
@@ -43,6 +45,8 @@ class Item(object):
             self.set_currency_type(params['currencyType'] if 'currencyType' in params.keys() else None)
             self.set_currency_money_name(params['currencyMoneyName'] if 'currencyMoneyName' in params.keys() else None)
             self.set_currency_gold_name(params['currencyGoldName'] if 'currencyGoldName' in params.keys() else None)
+            self.set_currency_consumable_item_item_pool_name(params['currencyConsumableItemItemPoolName'] if 'currencyConsumableItemItemPoolName' in params.keys() else None)
+            self.set_currency_consumable_item_name(params['currencyConsumableItemName'] if 'currencyConsumableItemName' in params.keys() else None)
             self.set_currency_option(params['currencyOption'] if 'currencyOption' in params.keys() else None)
             self.set_price(params['price'] if 'price' in params.keys() else None)
             self.set_item_type(params['itemType'] if 'itemType' in params.keys() else None)
@@ -150,6 +154,38 @@ class Item(object):
         :type currency_gold_name: unicode
         """
         self.__currency_gold_name = currency_gold_name
+
+    def get_currency_consumable_item_item_pool_name(self):
+        """
+        GS2-ConsumableItem アイテムプール名を取得
+        :return: GS2-ConsumableItem アイテムプール名
+        :rtype: unicode
+        """
+        return self.__currency_consumable_item_item_pool_name
+
+    def set_currency_consumable_item_item_pool_name(self, currency_consumable_item_item_pool_name):
+        """
+        GS2-ConsumableItem アイテムプール名を設定
+        :param currency_consumable_item_item_pool_name: GS2-ConsumableItem アイテムプール名
+        :type currency_consumable_item_item_pool_name: unicode
+        """
+        self.__currency_consumable_item_item_pool_name = currency_consumable_item_item_pool_name
+
+    def get_currency_consumable_item_name(self):
+        """
+        GS2-ConsumableItem アイテム名を取得
+        :return: GS2-ConsumableItem アイテム名
+        :rtype: unicode
+        """
+        return self.__currency_consumable_item_name
+
+    def set_currency_consumable_item_name(self, currency_consumable_item_name):
+        """
+        GS2-ConsumableItem アイテム名を設定
+        :param currency_consumable_item_name: GS2-ConsumableItem アイテム名
+        :type currency_consumable_item_name: unicode
+        """
+        self.__currency_consumable_item_name = currency_consumable_item_name
 
     def get_currency_option(self):
         """
@@ -341,6 +377,8 @@ class Item(object):
             "currencyType": self.__currency_type,
             "currencyMoneyName": self.__currency_money_name,
             "currencyGoldName": self.__currency_gold_name,
+            "currencyConsumableItemItemPoolName": self.__currency_consumable_item_item_pool_name,
+            "currencyConsumableItemName": self.__currency_consumable_item_name,
             "currencyOption": self.__currency_option,
             "price": self.__price,
             "itemType": self.__item_type,

@@ -55,6 +55,14 @@ class CreateItemMasterRequest(Gs2BasicRequest):
         else:
             self.set_currency_gold_name(params['currencyGoldName'] if 'currencyGoldName' in params.keys() else None)
         if params is None:
+            self.__currency_consumable_item_item_pool_name = None
+        else:
+            self.set_currency_consumable_item_item_pool_name(params['currencyConsumableItemItemPoolName'] if 'currencyConsumableItemItemPoolName' in params.keys() else None)
+        if params is None:
+            self.__currency_consumable_item_item_name = None
+        else:
+            self.set_currency_consumable_item_item_name(params['currencyConsumableItemItemName'] if 'currencyConsumableItemItemName' in params.keys() else None)
+        if params is None:
             self.__currency_option = None
         else:
             self.set_currency_option(params['currencyOption'] if 'currencyOption' in params.keys() else None)
@@ -86,6 +94,14 @@ class CreateItemMasterRequest(Gs2BasicRequest):
             self.__item_consumable_item_item_name = None
         else:
             self.set_item_consumable_item_item_name(params['itemConsumableItemItemName'] if 'itemConsumableItemItemName' in params.keys() else None)
+        if params is None:
+            self.__item_gacha_gacha_pool_name = None
+        else:
+            self.set_item_gacha_gacha_pool_name(params['itemGachaGachaPoolName'] if 'itemGachaGachaPoolName' in params.keys() else None)
+        if params is None:
+            self.__item_gacha_gacha_name = None
+        else:
+            self.set_item_gacha_gacha_name(params['itemGachaGachaName'] if 'itemGachaGachaName' in params.keys() else None)
         if params is None:
             self.__item_amount = None
         else:
@@ -279,6 +295,64 @@ class CreateItemMasterRequest(Gs2BasicRequest):
         :rtype: CreateItemMasterRequest
         """
         self.set_currency_gold_name(currency_gold_name)
+        return self
+
+    def get_currency_consumable_item_item_pool_name(self):
+        """
+        GS2-ConsumableItem アイテムプール名を取得
+        :return: GS2-ConsumableItem アイテムプール名
+        :rtype: unicode
+        """
+        return self.__currency_consumable_item_item_pool_name
+
+    def set_currency_consumable_item_item_pool_name(self, currency_consumable_item_item_pool_name):
+        """
+        GS2-ConsumableItem アイテムプール名を設定
+        :param currency_consumable_item_item_pool_name: GS2-ConsumableItem アイテムプール名
+        :type currency_consumable_item_item_pool_name: unicode
+        """
+        if currency_consumable_item_item_pool_name and not (isinstance(currency_consumable_item_item_pool_name, str) or isinstance(currency_consumable_item_item_pool_name, unicode)):
+            raise TypeError(type(currency_consumable_item_item_pool_name))
+        self.__currency_consumable_item_item_pool_name = currency_consumable_item_item_pool_name
+
+    def with_currency_consumable_item_item_pool_name(self, currency_consumable_item_item_pool_name):
+        """
+        GS2-ConsumableItem アイテムプール名を設定
+        :param currency_consumable_item_item_pool_name: GS2-ConsumableItem アイテムプール名
+        :type currency_consumable_item_item_pool_name: unicode
+        :return: this
+        :rtype: CreateItemMasterRequest
+        """
+        self.set_currency_consumable_item_item_pool_name(currency_consumable_item_item_pool_name)
+        return self
+
+    def get_currency_consumable_item_item_name(self):
+        """
+        GS2-ConsumableItem アイテム名を取得
+        :return: GS2-ConsumableItem アイテム名
+        :rtype: unicode
+        """
+        return self.__currency_consumable_item_item_name
+
+    def set_currency_consumable_item_item_name(self, currency_consumable_item_item_name):
+        """
+        GS2-ConsumableItem アイテム名を設定
+        :param currency_consumable_item_item_name: GS2-ConsumableItem アイテム名
+        :type currency_consumable_item_item_name: unicode
+        """
+        if currency_consumable_item_item_name and not (isinstance(currency_consumable_item_item_name, str) or isinstance(currency_consumable_item_item_name, unicode)):
+            raise TypeError(type(currency_consumable_item_item_name))
+        self.__currency_consumable_item_item_name = currency_consumable_item_item_name
+
+    def with_currency_consumable_item_item_name(self, currency_consumable_item_item_name):
+        """
+        GS2-ConsumableItem アイテム名を設定
+        :param currency_consumable_item_item_name: GS2-ConsumableItem アイテム名
+        :type currency_consumable_item_item_name: unicode
+        :return: this
+        :rtype: CreateItemMasterRequest
+        """
+        self.set_currency_consumable_item_item_name(currency_consumable_item_item_name)
         return self
 
     def get_currency_option(self):
@@ -511,6 +585,64 @@ class CreateItemMasterRequest(Gs2BasicRequest):
         :rtype: CreateItemMasterRequest
         """
         self.set_item_consumable_item_item_name(item_consumable_item_item_name)
+        return self
+
+    def get_item_gacha_gacha_pool_name(self):
+        """
+        GS2-Gacha ガチャプール名を取得
+        :return: GS2-Gacha ガチャプール名
+        :rtype: unicode
+        """
+        return self.__item_gacha_gacha_pool_name
+
+    def set_item_gacha_gacha_pool_name(self, item_gacha_gacha_pool_name):
+        """
+        GS2-Gacha ガチャプール名を設定
+        :param item_gacha_gacha_pool_name: GS2-Gacha ガチャプール名
+        :type item_gacha_gacha_pool_name: unicode
+        """
+        if item_gacha_gacha_pool_name and not (isinstance(item_gacha_gacha_pool_name, str) or isinstance(item_gacha_gacha_pool_name, unicode)):
+            raise TypeError(type(item_gacha_gacha_pool_name))
+        self.__item_gacha_gacha_pool_name = item_gacha_gacha_pool_name
+
+    def with_item_gacha_gacha_pool_name(self, item_gacha_gacha_pool_name):
+        """
+        GS2-Gacha ガチャプール名を設定
+        :param item_gacha_gacha_pool_name: GS2-Gacha ガチャプール名
+        :type item_gacha_gacha_pool_name: unicode
+        :return: this
+        :rtype: CreateItemMasterRequest
+        """
+        self.set_item_gacha_gacha_pool_name(item_gacha_gacha_pool_name)
+        return self
+
+    def get_item_gacha_gacha_name(self):
+        """
+        GS2-Gacha ガチャ名を取得
+        :return: GS2-Gacha ガチャ名
+        :rtype: unicode
+        """
+        return self.__item_gacha_gacha_name
+
+    def set_item_gacha_gacha_name(self, item_gacha_gacha_name):
+        """
+        GS2-Gacha ガチャ名を設定
+        :param item_gacha_gacha_name: GS2-Gacha ガチャ名
+        :type item_gacha_gacha_name: unicode
+        """
+        if item_gacha_gacha_name and not (isinstance(item_gacha_gacha_name, str) or isinstance(item_gacha_gacha_name, unicode)):
+            raise TypeError(type(item_gacha_gacha_name))
+        self.__item_gacha_gacha_name = item_gacha_gacha_name
+
+    def with_item_gacha_gacha_name(self, item_gacha_gacha_name):
+        """
+        GS2-Gacha ガチャ名を設定
+        :param item_gacha_gacha_name: GS2-Gacha ガチャ名
+        :type item_gacha_gacha_name: unicode
+        :return: this
+        :rtype: CreateItemMasterRequest
+        """
+        self.set_item_gacha_gacha_name(item_gacha_gacha_name)
         return self
 
     def get_item_amount(self):
