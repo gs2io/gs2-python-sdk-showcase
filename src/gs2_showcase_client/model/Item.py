@@ -24,6 +24,7 @@ class Item(object):
             self.__meta = None
             self.__currency_type = None
             self.__currency_money_name = None
+            self.__currency_gold_pool_name = None
             self.__currency_gold_name = None
             self.__currency_consumable_item_item_pool_name = None
             self.__currency_consumable_item_name = None
@@ -31,10 +32,13 @@ class Item(object):
             self.__price = None
             self.__item_type = None
             self.__item_money_name = None
+            self.__item_gold_pool_name = None
             self.__item_gold_name = None
             self.__item_stamina_stamina_pool_name = None
             self.__item_consumable_item_item_pool_name = None
             self.__item_consumable_item_item_name = None
+            self.__item_gacha_gacha_pool_name = None
+            self.__item_gacha_gacha_name = None
             self.__item_amount = None
             self.__item_option = None
             self.__can_buy = None
@@ -44,6 +48,7 @@ class Item(object):
             self.set_meta(params['meta'] if 'meta' in params.keys() else None)
             self.set_currency_type(params['currencyType'] if 'currencyType' in params.keys() else None)
             self.set_currency_money_name(params['currencyMoneyName'] if 'currencyMoneyName' in params.keys() else None)
+            self.set_currency_gold_pool_name(params['currencyGoldPoolName'] if 'currencyGoldPoolName' in params.keys() else None)
             self.set_currency_gold_name(params['currencyGoldName'] if 'currencyGoldName' in params.keys() else None)
             self.set_currency_consumable_item_item_pool_name(params['currencyConsumableItemItemPoolName'] if 'currencyConsumableItemItemPoolName' in params.keys() else None)
             self.set_currency_consumable_item_name(params['currencyConsumableItemName'] if 'currencyConsumableItemName' in params.keys() else None)
@@ -51,10 +56,13 @@ class Item(object):
             self.set_price(params['price'] if 'price' in params.keys() else None)
             self.set_item_type(params['itemType'] if 'itemType' in params.keys() else None)
             self.set_item_money_name(params['itemMoneyName'] if 'itemMoneyName' in params.keys() else None)
+            self.set_item_gold_pool_name(params['itemGoldPoolName'] if 'itemGoldPoolName' in params.keys() else None)
             self.set_item_gold_name(params['itemGoldName'] if 'itemGoldName' in params.keys() else None)
             self.set_item_stamina_stamina_pool_name(params['itemStaminaStaminaPoolName'] if 'itemStaminaStaminaPoolName' in params.keys() else None)
             self.set_item_consumable_item_item_pool_name(params['itemConsumableItemItemPoolName'] if 'itemConsumableItemItemPoolName' in params.keys() else None)
             self.set_item_consumable_item_item_name(params['itemConsumableItemItemName'] if 'itemConsumableItemItemName' in params.keys() else None)
+            self.set_item_gacha_gacha_pool_name(params['itemGachaGachaPoolName'] if 'itemGachaGachaPoolName' in params.keys() else None)
+            self.set_item_gacha_gacha_name(params['itemGachaGachaName'] if 'itemGachaGachaName' in params.keys() else None)
             self.set_item_amount(params['itemAmount'] if 'itemAmount' in params.keys() else None)
             self.set_item_option(params['itemOption'] if 'itemOption' in params.keys() else None)
             self.set_can_buy(params['canBuy'] if 'canBuy' in params.keys() else None)
@@ -138,6 +146,22 @@ class Item(object):
         :type currency_money_name: unicode
         """
         self.__currency_money_name = currency_money_name
+
+    def get_currency_gold_pool_name(self):
+        """
+        GS2-Gold 通貨プール名を取得
+        :return: GS2-Gold 通貨プール名
+        :rtype: unicode
+        """
+        return self.__currency_gold_pool_name
+
+    def set_currency_gold_pool_name(self, currency_gold_pool_name):
+        """
+        GS2-Gold 通貨プール名を設定
+        :param currency_gold_pool_name: GS2-Gold 通貨プール名
+        :type currency_gold_pool_name: unicode
+        """
+        self.__currency_gold_pool_name = currency_gold_pool_name
 
     def get_currency_gold_name(self):
         """
@@ -251,6 +275,22 @@ class Item(object):
         """
         self.__item_money_name = item_money_name
 
+    def get_item_gold_pool_name(self):
+        """
+        GS2-Gold 通貨プール名を取得
+        :return: GS2-Gold 通貨プール名
+        :rtype: unicode
+        """
+        return self.__item_gold_pool_name
+
+    def set_item_gold_pool_name(self, item_gold_pool_name):
+        """
+        GS2-Gold 通貨プール名を設定
+        :param item_gold_pool_name: GS2-Gold 通貨プール名
+        :type item_gold_pool_name: unicode
+        """
+        self.__item_gold_pool_name = item_gold_pool_name
+
     def get_item_gold_name(self):
         """
         GS2-Gold 通貨名を取得
@@ -315,6 +355,38 @@ class Item(object):
         """
         self.__item_consumable_item_item_name = item_consumable_item_item_name
 
+    def get_item_gacha_gacha_pool_name(self):
+        """
+        GS2-Gacha ガチャプール名を取得
+        :return: GS2-Gacha ガチャプール名
+        :rtype: unicode
+        """
+        return self.__item_gacha_gacha_pool_name
+
+    def set_item_gacha_gacha_pool_name(self, item_gacha_gacha_pool_name):
+        """
+        GS2-Gacha ガチャプール名を設定
+        :param item_gacha_gacha_pool_name: GS2-Gacha ガチャプール名
+        :type item_gacha_gacha_pool_name: unicode
+        """
+        self.__item_gacha_gacha_pool_name = item_gacha_gacha_pool_name
+
+    def get_item_gacha_gacha_name(self):
+        """
+        GS2-Gacha ガチャ名を取得
+        :return: GS2-Gacha ガチャ名
+        :rtype: unicode
+        """
+        return self.__item_gacha_gacha_name
+
+    def set_item_gacha_gacha_name(self, item_gacha_gacha_name):
+        """
+        GS2-Gacha ガチャ名を設定
+        :param item_gacha_gacha_name: GS2-Gacha ガチャ名
+        :type item_gacha_gacha_name: unicode
+        """
+        self.__item_gacha_gacha_name = item_gacha_gacha_name
+
     def get_item_amount(self):
         """
         入手数量を取得
@@ -376,6 +448,7 @@ class Item(object):
             "meta": self.__meta,
             "currencyType": self.__currency_type,
             "currencyMoneyName": self.__currency_money_name,
+            "currencyGoldPoolName": self.__currency_gold_pool_name,
             "currencyGoldName": self.__currency_gold_name,
             "currencyConsumableItemItemPoolName": self.__currency_consumable_item_item_pool_name,
             "currencyConsumableItemName": self.__currency_consumable_item_name,
@@ -383,10 +456,13 @@ class Item(object):
             "price": self.__price,
             "itemType": self.__item_type,
             "itemMoneyName": self.__item_money_name,
+            "itemGoldPoolName": self.__item_gold_pool_name,
             "itemGoldName": self.__item_gold_name,
             "itemStaminaStaminaPoolName": self.__item_stamina_stamina_pool_name,
             "itemConsumableItemItemPoolName": self.__item_consumable_item_item_pool_name,
             "itemConsumableItemItemName": self.__item_consumable_item_item_name,
+            "itemGachaGachaPoolName": self.__item_gacha_gacha_pool_name,
+            "itemGachaGachaName": self.__item_gacha_gacha_name,
             "itemAmount": self.__item_amount,
             "itemOption": self.__item_option,
             "canBuy": self.__can_buy,

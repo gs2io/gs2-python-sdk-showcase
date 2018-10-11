@@ -53,7 +53,7 @@ class UpdateCurrentShowcaseMasterRequest(Gs2BasicRequest):
         :param showcase_name: ショーケースの名前
         :type showcase_name: unicode
         """
-        if showcase_name and not (isinstance(showcase_name, str) or isinstance(showcase_name, unicode)):
+        if showcase_name is not None and not (isinstance(showcase_name, str) or isinstance(showcase_name, unicode)):
             raise TypeError(type(showcase_name))
         self.__showcase_name = showcase_name
 
@@ -82,7 +82,7 @@ class UpdateCurrentShowcaseMasterRequest(Gs2BasicRequest):
         :param settings: ショーケースマスターデータ
         :type settings: unicode
         """
-        if settings and not (isinstance(settings, str) or isinstance(settings, unicode)):
+        if settings is not None and not (isinstance(settings, str) or isinstance(settings, unicode)):
             raise TypeError(type(settings))
         self.__settings = settings
 

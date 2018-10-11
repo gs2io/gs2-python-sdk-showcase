@@ -24,6 +24,7 @@ class ItemMaster(object):
             self.__meta = None
             self.__currency_type = None
             self.__currency_money_name = None
+            self.__currency_gold_pool_name = None
             self.__currency_gold_name = None
             self.__currency_consumable_item_item_pool_name = None
             self.__currency_consumable_item_item_name = None
@@ -31,6 +32,7 @@ class ItemMaster(object):
             self.__price = None
             self.__item_type = None
             self.__item_money_name = None
+            self.__item_gold_pool_name = None
             self.__item_gold_name = None
             self.__item_stamina_stamina_pool_name = None
             self.__item_consumable_item_item_pool_name = None
@@ -50,6 +52,7 @@ class ItemMaster(object):
             self.set_meta(params['meta'] if 'meta' in params.keys() else None)
             self.set_currency_type(params['currencyType'] if 'currencyType' in params.keys() else None)
             self.set_currency_money_name(params['currencyMoneyName'] if 'currencyMoneyName' in params.keys() else None)
+            self.set_currency_gold_pool_name(params['currencyGoldPoolName'] if 'currencyGoldPoolName' in params.keys() else None)
             self.set_currency_gold_name(params['currencyGoldName'] if 'currencyGoldName' in params.keys() else None)
             self.set_currency_consumable_item_item_pool_name(params['currencyConsumableItemItemPoolName'] if 'currencyConsumableItemItemPoolName' in params.keys() else None)
             self.set_currency_consumable_item_item_name(params['currencyConsumableItemItemName'] if 'currencyConsumableItemItemName' in params.keys() else None)
@@ -57,6 +60,7 @@ class ItemMaster(object):
             self.set_price(params['price'] if 'price' in params.keys() else None)
             self.set_item_type(params['itemType'] if 'itemType' in params.keys() else None)
             self.set_item_money_name(params['itemMoneyName'] if 'itemMoneyName' in params.keys() else None)
+            self.set_item_gold_pool_name(params['itemGoldPoolName'] if 'itemGoldPoolName' in params.keys() else None)
             self.set_item_gold_name(params['itemGoldName'] if 'itemGoldName' in params.keys() else None)
             self.set_item_stamina_stamina_pool_name(params['itemStaminaStaminaPoolName'] if 'itemStaminaStaminaPoolName' in params.keys() else None)
             self.set_item_consumable_item_item_pool_name(params['itemConsumableItemItemPoolName'] if 'itemConsumableItemItemPoolName' in params.keys() else None)
@@ -150,6 +154,22 @@ class ItemMaster(object):
         :type currency_money_name: unicode
         """
         self.__currency_money_name = currency_money_name
+
+    def get_currency_gold_pool_name(self):
+        """
+        GS2-Gold 通貨プール名を取得
+        :return: GS2-Gold 通貨プール名
+        :rtype: unicode
+        """
+        return self.__currency_gold_pool_name
+
+    def set_currency_gold_pool_name(self, currency_gold_pool_name):
+        """
+        GS2-Gold 通貨プール名を設定
+        :param currency_gold_pool_name: GS2-Gold 通貨プール名
+        :type currency_gold_pool_name: unicode
+        """
+        self.__currency_gold_pool_name = currency_gold_pool_name
 
     def get_currency_gold_name(self):
         """
@@ -262,6 +282,22 @@ class ItemMaster(object):
         :type item_money_name: unicode
         """
         self.__item_money_name = item_money_name
+
+    def get_item_gold_pool_name(self):
+        """
+        GS2-Gold 通貨プール名を取得
+        :return: GS2-Gold 通貨プール名
+        :rtype: unicode
+        """
+        return self.__item_gold_pool_name
+
+    def set_item_gold_pool_name(self, item_gold_pool_name):
+        """
+        GS2-Gold 通貨プール名を設定
+        :param item_gold_pool_name: GS2-Gold 通貨プール名
+        :type item_gold_pool_name: unicode
+        """
+        self.__item_gold_pool_name = item_gold_pool_name
 
     def get_item_gold_name(self):
         """
@@ -484,6 +520,7 @@ class ItemMaster(object):
             "meta": self.__meta,
             "currencyType": self.__currency_type,
             "currencyMoneyName": self.__currency_money_name,
+            "currencyGoldPoolName": self.__currency_gold_pool_name,
             "currencyGoldName": self.__currency_gold_name,
             "currencyConsumableItemItemPoolName": self.__currency_consumable_item_item_pool_name,
             "currencyConsumableItemItemName": self.__currency_consumable_item_item_name,
@@ -491,6 +528,7 @@ class ItemMaster(object):
             "price": self.__price,
             "itemType": self.__item_type,
             "itemMoneyName": self.__item_money_name,
+            "itemGoldPoolName": self.__item_gold_pool_name,
             "itemGoldName": self.__item_gold_name,
             "itemStaminaStaminaPoolName": self.__item_stamina_stamina_pool_name,
             "itemConsumableItemItemPoolName": self.__item_consumable_item_item_pool_name,

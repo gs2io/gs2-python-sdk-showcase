@@ -55,6 +55,10 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         else:
             self.set_currency_gold_name(params['currencyGoldName'] if 'currencyGoldName' in params.keys() else None)
         if params is None:
+            self.__currency_gold_pool_name = None
+        else:
+            self.set_currency_gold_pool_name(params['currencyGoldPoolName'] if 'currencyGoldPoolName' in params.keys() else None)
+        if params is None:
             self.__currency_consumable_item_item_pool_name = None
         else:
             self.set_currency_consumable_item_item_pool_name(params['currencyConsumableItemItemPoolName'] if 'currencyConsumableItemItemPoolName' in params.keys() else None)
@@ -78,6 +82,10 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
             self.__item_money_name = None
         else:
             self.set_item_money_name(params['itemMoneyName'] if 'itemMoneyName' in params.keys() else None)
+        if params is None:
+            self.__item_gold_pool_name = None
+        else:
+            self.set_item_gold_pool_name(params['itemGoldPoolName'] if 'itemGoldPoolName' in params.keys() else None)
         if params is None:
             self.__item_gold_name = None
         else:
@@ -137,7 +145,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param showcase_name: ショーケースの名前
         :type showcase_name: unicode
         """
-        if showcase_name and not (isinstance(showcase_name, str) or isinstance(showcase_name, unicode)):
+        if showcase_name is not None and not (isinstance(showcase_name, str) or isinstance(showcase_name, unicode)):
             raise TypeError(type(showcase_name))
         self.__showcase_name = showcase_name
 
@@ -166,7 +174,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param item_name: 商品の名前
         :type item_name: unicode
         """
-        if item_name and not (isinstance(item_name, str) or isinstance(item_name, unicode)):
+        if item_name is not None and not (isinstance(item_name, str) or isinstance(item_name, unicode)):
             raise TypeError(type(item_name))
         self.__item_name = item_name
 
@@ -195,7 +203,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param meta: メタデータ
         :type meta: unicode
         """
-        if meta and not (isinstance(meta, str) or isinstance(meta, unicode)):
+        if meta is not None and not (isinstance(meta, str) or isinstance(meta, unicode)):
             raise TypeError(type(meta))
         self.__meta = meta
 
@@ -224,7 +232,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param currency_type: 販売通貨
         :type currency_type: unicode
         """
-        if currency_type and not (isinstance(currency_type, str) or isinstance(currency_type, unicode)):
+        if currency_type is not None and not (isinstance(currency_type, str) or isinstance(currency_type, unicode)):
             raise TypeError(type(currency_type))
         self.__currency_type = currency_type
 
@@ -253,7 +261,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param currency_money_name: GS2-Money 課金通貨名
         :type currency_money_name: unicode
         """
-        if currency_money_name and not (isinstance(currency_money_name, str) or isinstance(currency_money_name, unicode)):
+        if currency_money_name is not None and not (isinstance(currency_money_name, str) or isinstance(currency_money_name, unicode)):
             raise TypeError(type(currency_money_name))
         self.__currency_money_name = currency_money_name
 
@@ -282,7 +290,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param currency_gold_name: GS2-Gold 通貨名
         :type currency_gold_name: unicode
         """
-        if currency_gold_name and not (isinstance(currency_gold_name, str) or isinstance(currency_gold_name, unicode)):
+        if currency_gold_name is not None and not (isinstance(currency_gold_name, str) or isinstance(currency_gold_name, unicode)):
             raise TypeError(type(currency_gold_name))
         self.__currency_gold_name = currency_gold_name
 
@@ -295,6 +303,35 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :rtype: UpdateItemMasterRequest
         """
         self.set_currency_gold_name(currency_gold_name)
+        return self
+
+    def get_currency_gold_pool_name(self):
+        """
+        GS2-Gold 通貨プール名を取得
+        :return: GS2-Gold 通貨プール名
+        :rtype: unicode
+        """
+        return self.__currency_gold_pool_name
+
+    def set_currency_gold_pool_name(self, currency_gold_pool_name):
+        """
+        GS2-Gold 通貨プール名を設定
+        :param currency_gold_pool_name: GS2-Gold 通貨プール名
+        :type currency_gold_pool_name: unicode
+        """
+        if currency_gold_pool_name is not None and not (isinstance(currency_gold_pool_name, str) or isinstance(currency_gold_pool_name, unicode)):
+            raise TypeError(type(currency_gold_pool_name))
+        self.__currency_gold_pool_name = currency_gold_pool_name
+
+    def with_currency_gold_pool_name(self, currency_gold_pool_name):
+        """
+        GS2-Gold 通貨プール名を設定
+        :param currency_gold_pool_name: GS2-Gold 通貨プール名
+        :type currency_gold_pool_name: unicode
+        :return: this
+        :rtype: UpdateItemMasterRequest
+        """
+        self.set_currency_gold_pool_name(currency_gold_pool_name)
         return self
 
     def get_currency_consumable_item_item_pool_name(self):
@@ -311,7 +348,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param currency_consumable_item_item_pool_name: GS2-ConsumableItem アイテムプール名
         :type currency_consumable_item_item_pool_name: unicode
         """
-        if currency_consumable_item_item_pool_name and not (isinstance(currency_consumable_item_item_pool_name, str) or isinstance(currency_consumable_item_item_pool_name, unicode)):
+        if currency_consumable_item_item_pool_name is not None and not (isinstance(currency_consumable_item_item_pool_name, str) or isinstance(currency_consumable_item_item_pool_name, unicode)):
             raise TypeError(type(currency_consumable_item_item_pool_name))
         self.__currency_consumable_item_item_pool_name = currency_consumable_item_item_pool_name
 
@@ -340,7 +377,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param currency_consumable_item_item_name: GS2-ConsumableItem アイテム名
         :type currency_consumable_item_item_name: unicode
         """
-        if currency_consumable_item_item_name and not (isinstance(currency_consumable_item_item_name, str) or isinstance(currency_consumable_item_item_name, unicode)):
+        if currency_consumable_item_item_name is not None and not (isinstance(currency_consumable_item_item_name, str) or isinstance(currency_consumable_item_item_name, unicode)):
             raise TypeError(type(currency_consumable_item_item_name))
         self.__currency_consumable_item_item_name = currency_consumable_item_item_name
 
@@ -369,7 +406,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param currency_option: 対価消費処理にまつわるオプション値
         :type currency_option: unicode
         """
-        if currency_option and not (isinstance(currency_option, str) or isinstance(currency_option, unicode)):
+        if currency_option is not None and not (isinstance(currency_option, str) or isinstance(currency_option, unicode)):
             raise TypeError(type(currency_option))
         self.__currency_option = currency_option
 
@@ -398,7 +435,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param price: 販売価格
         :type price: float
         """
-        if price and not isinstance(price, float):
+        if price is not None and not isinstance(price, float):
             raise TypeError(type(price))
         self.__price = price
 
@@ -427,7 +464,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param item_type: 入手アイテムの種類
         :type item_type: unicode
         """
-        if item_type and not (isinstance(item_type, str) or isinstance(item_type, unicode)):
+        if item_type is not None and not (isinstance(item_type, str) or isinstance(item_type, unicode)):
             raise TypeError(type(item_type))
         self.__item_type = item_type
 
@@ -456,7 +493,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param item_money_name: GS2-Money 課金通貨名
         :type item_money_name: unicode
         """
-        if item_money_name and not (isinstance(item_money_name, str) or isinstance(item_money_name, unicode)):
+        if item_money_name is not None and not (isinstance(item_money_name, str) or isinstance(item_money_name, unicode)):
             raise TypeError(type(item_money_name))
         self.__item_money_name = item_money_name
 
@@ -469,6 +506,35 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :rtype: UpdateItemMasterRequest
         """
         self.set_item_money_name(item_money_name)
+        return self
+
+    def get_item_gold_pool_name(self):
+        """
+        GS2-Gold 通貨プール名を取得
+        :return: GS2-Gold 通貨プール名
+        :rtype: unicode
+        """
+        return self.__item_gold_pool_name
+
+    def set_item_gold_pool_name(self, item_gold_pool_name):
+        """
+        GS2-Gold 通貨プール名を設定
+        :param item_gold_pool_name: GS2-Gold 通貨プール名
+        :type item_gold_pool_name: unicode
+        """
+        if item_gold_pool_name is not None and not (isinstance(item_gold_pool_name, str) or isinstance(item_gold_pool_name, unicode)):
+            raise TypeError(type(item_gold_pool_name))
+        self.__item_gold_pool_name = item_gold_pool_name
+
+    def with_item_gold_pool_name(self, item_gold_pool_name):
+        """
+        GS2-Gold 通貨プール名を設定
+        :param item_gold_pool_name: GS2-Gold 通貨プール名
+        :type item_gold_pool_name: unicode
+        :return: this
+        :rtype: UpdateItemMasterRequest
+        """
+        self.set_item_gold_pool_name(item_gold_pool_name)
         return self
 
     def get_item_gold_name(self):
@@ -485,7 +551,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param item_gold_name: GS2-Gold 通貨名
         :type item_gold_name: unicode
         """
-        if item_gold_name and not (isinstance(item_gold_name, str) or isinstance(item_gold_name, unicode)):
+        if item_gold_name is not None and not (isinstance(item_gold_name, str) or isinstance(item_gold_name, unicode)):
             raise TypeError(type(item_gold_name))
         self.__item_gold_name = item_gold_name
 
@@ -514,7 +580,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param item_stamina_stamina_pool_name: GS2-Stamina スタミナプール名
         :type item_stamina_stamina_pool_name: unicode
         """
-        if item_stamina_stamina_pool_name and not (isinstance(item_stamina_stamina_pool_name, str) or isinstance(item_stamina_stamina_pool_name, unicode)):
+        if item_stamina_stamina_pool_name is not None and not (isinstance(item_stamina_stamina_pool_name, str) or isinstance(item_stamina_stamina_pool_name, unicode)):
             raise TypeError(type(item_stamina_stamina_pool_name))
         self.__item_stamina_stamina_pool_name = item_stamina_stamina_pool_name
 
@@ -543,7 +609,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param item_consumable_item_item_pool_name: GS2-ConsumableItem アイテムプール名
         :type item_consumable_item_item_pool_name: unicode
         """
-        if item_consumable_item_item_pool_name and not (isinstance(item_consumable_item_item_pool_name, str) or isinstance(item_consumable_item_item_pool_name, unicode)):
+        if item_consumable_item_item_pool_name is not None and not (isinstance(item_consumable_item_item_pool_name, str) or isinstance(item_consumable_item_item_pool_name, unicode)):
             raise TypeError(type(item_consumable_item_item_pool_name))
         self.__item_consumable_item_item_pool_name = item_consumable_item_item_pool_name
 
@@ -572,7 +638,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param item_consumable_item_item_name: GS2-ConsumableItem アイテム名
         :type item_consumable_item_item_name: unicode
         """
-        if item_consumable_item_item_name and not (isinstance(item_consumable_item_item_name, str) or isinstance(item_consumable_item_item_name, unicode)):
+        if item_consumable_item_item_name is not None and not (isinstance(item_consumable_item_item_name, str) or isinstance(item_consumable_item_item_name, unicode)):
             raise TypeError(type(item_consumable_item_item_name))
         self.__item_consumable_item_item_name = item_consumable_item_item_name
 
@@ -601,7 +667,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param item_gacha_gacha_pool_name: GS2-Gacha ガチャプール名
         :type item_gacha_gacha_pool_name: unicode
         """
-        if item_gacha_gacha_pool_name and not (isinstance(item_gacha_gacha_pool_name, str) or isinstance(item_gacha_gacha_pool_name, unicode)):
+        if item_gacha_gacha_pool_name is not None and not (isinstance(item_gacha_gacha_pool_name, str) or isinstance(item_gacha_gacha_pool_name, unicode)):
             raise TypeError(type(item_gacha_gacha_pool_name))
         self.__item_gacha_gacha_pool_name = item_gacha_gacha_pool_name
 
@@ -630,7 +696,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param item_gacha_gacha_name: GS2-Gacha ガチャ名
         :type item_gacha_gacha_name: unicode
         """
-        if item_gacha_gacha_name and not (isinstance(item_gacha_gacha_name, str) or isinstance(item_gacha_gacha_name, unicode)):
+        if item_gacha_gacha_name is not None and not (isinstance(item_gacha_gacha_name, str) or isinstance(item_gacha_gacha_name, unicode)):
             raise TypeError(type(item_gacha_gacha_name))
         self.__item_gacha_gacha_name = item_gacha_gacha_name
 
@@ -659,7 +725,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param item_amount: 入手数量
         :type item_amount: int
         """
-        if item_amount and not isinstance(item_amount, int):
+        if item_amount is not None and not isinstance(item_amount, int):
             raise TypeError(type(item_amount))
         self.__item_amount = item_amount
 
@@ -688,7 +754,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param item_option: アイテムの入手処理にまつわるオプション値
         :type item_option: unicode
         """
-        if item_option and not (isinstance(item_option, str) or isinstance(item_option, unicode)):
+        if item_option is not None and not (isinstance(item_option, str) or isinstance(item_option, unicode)):
             raise TypeError(type(item_option))
         self.__item_option = item_option
 
@@ -717,7 +783,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param open_condition_type: 購入許可判定の種類
         :type open_condition_type: unicode
         """
-        if open_condition_type and not (isinstance(open_condition_type, str) or isinstance(open_condition_type, unicode)):
+        if open_condition_type is not None and not (isinstance(open_condition_type, str) or isinstance(open_condition_type, unicode)):
             raise TypeError(type(open_condition_type))
         self.__open_condition_type = open_condition_type
 
@@ -746,7 +812,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param open_condition_limit_name: 購入許可判定 に実行されるGS2-Limit
         :type open_condition_limit_name: unicode
         """
-        if open_condition_limit_name and not (isinstance(open_condition_limit_name, str) or isinstance(open_condition_limit_name, unicode)):
+        if open_condition_limit_name is not None and not (isinstance(open_condition_limit_name, str) or isinstance(open_condition_limit_name, unicode)):
             raise TypeError(type(open_condition_limit_name))
         self.__open_condition_limit_name = open_condition_limit_name
 
@@ -775,7 +841,7 @@ class UpdateItemMasterRequest(Gs2BasicRequest):
         :param open_condition_limit_counter_name: 購入許可判定 に実行されるGS2-Limit のカウンター
         :type open_condition_limit_counter_name: unicode
         """
-        if open_condition_limit_counter_name and not (isinstance(open_condition_limit_counter_name, str) or isinstance(open_condition_limit_counter_name, unicode)):
+        if open_condition_limit_counter_name is not None and not (isinstance(open_condition_limit_counter_name, str) or isinstance(open_condition_limit_counter_name, unicode)):
             raise TypeError(type(open_condition_limit_counter_name))
         self.__open_condition_limit_counter_name = open_condition_limit_counter_name
 

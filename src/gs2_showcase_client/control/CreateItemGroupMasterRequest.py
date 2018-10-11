@@ -57,7 +57,7 @@ class CreateItemGroupMasterRequest(Gs2BasicRequest):
         :param showcase_name: ショーケースの名前
         :type showcase_name: unicode
         """
-        if showcase_name and not (isinstance(showcase_name, str) or isinstance(showcase_name, unicode)):
+        if showcase_name is not None and not (isinstance(showcase_name, str) or isinstance(showcase_name, unicode)):
             raise TypeError(type(showcase_name))
         self.__showcase_name = showcase_name
 
@@ -86,7 +86,7 @@ class CreateItemGroupMasterRequest(Gs2BasicRequest):
         :param name: 商品グループ名
         :type name: unicode
         """
-        if name and not (isinstance(name, str) or isinstance(name, unicode)):
+        if name is not None and not (isinstance(name, str) or isinstance(name, unicode)):
             raise TypeError(type(name))
         self.__name = name
 
@@ -115,7 +115,7 @@ class CreateItemGroupMasterRequest(Gs2BasicRequest):
         :param item_names: 販売している商品名のリスト
         :type item_names: list[unicode]
         """
-        if item_names and not isinstance(item_names, list):
+        if item_names is not None and not isinstance(item_names, list):
             raise TypeError(type(item_names))
         self.__item_names = item_names
 

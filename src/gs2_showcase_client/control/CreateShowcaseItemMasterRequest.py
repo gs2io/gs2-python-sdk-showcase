@@ -77,7 +77,7 @@ class CreateShowcaseItemMasterRequest(Gs2BasicRequest):
         :param showcase_name: ショーケースの名前
         :type showcase_name: unicode
         """
-        if showcase_name and not (isinstance(showcase_name, str) or isinstance(showcase_name, unicode)):
+        if showcase_name is not None and not (isinstance(showcase_name, str) or isinstance(showcase_name, unicode)):
             raise TypeError(type(showcase_name))
         self.__showcase_name = showcase_name
 
@@ -106,7 +106,7 @@ class CreateShowcaseItemMasterRequest(Gs2BasicRequest):
         :param category: 商品の種類
         :type category: unicode
         """
-        if category and not (isinstance(category, str) or isinstance(category, unicode)):
+        if category is not None and not (isinstance(category, str) or isinstance(category, unicode)):
             raise TypeError(type(category))
         self.__category = category
 
@@ -135,7 +135,7 @@ class CreateShowcaseItemMasterRequest(Gs2BasicRequest):
         :param item_name: 商品名
         :type item_name: unicode
         """
-        if item_name and not (isinstance(item_name, str) or isinstance(item_name, unicode)):
+        if item_name is not None and not (isinstance(item_name, str) or isinstance(item_name, unicode)):
             raise TypeError(type(item_name))
         self.__item_name = item_name
 
@@ -164,7 +164,7 @@ class CreateShowcaseItemMasterRequest(Gs2BasicRequest):
         :param item_group_name: グループ名
         :type item_group_name: unicode
         """
-        if item_group_name and not (isinstance(item_group_name, str) or isinstance(item_group_name, unicode)):
+        if item_group_name is not None and not (isinstance(item_group_name, str) or isinstance(item_group_name, unicode)):
             raise TypeError(type(item_group_name))
         self.__item_group_name = item_group_name
 
@@ -193,7 +193,7 @@ class CreateShowcaseItemMasterRequest(Gs2BasicRequest):
         :param release_condition_type: 公開判定の種類
         :type release_condition_type: unicode
         """
-        if release_condition_type and not (isinstance(release_condition_type, str) or isinstance(release_condition_type, unicode)):
+        if release_condition_type is not None and not (isinstance(release_condition_type, str) or isinstance(release_condition_type, unicode)):
             raise TypeError(type(release_condition_type))
         self.__release_condition_type = release_condition_type
 
@@ -222,7 +222,7 @@ class CreateShowcaseItemMasterRequest(Gs2BasicRequest):
         :param release_condition_schedule_name: 公開許可判定 に実行されるGS2-Schedule
         :type release_condition_schedule_name: unicode
         """
-        if release_condition_schedule_name and not (isinstance(release_condition_schedule_name, str) or isinstance(release_condition_schedule_name, unicode)):
+        if release_condition_schedule_name is not None and not (isinstance(release_condition_schedule_name, str) or isinstance(release_condition_schedule_name, unicode)):
             raise TypeError(type(release_condition_schedule_name))
         self.__release_condition_schedule_name = release_condition_schedule_name
 
@@ -251,7 +251,7 @@ class CreateShowcaseItemMasterRequest(Gs2BasicRequest):
         :param release_condition_schedule_event_name: 公開許可判定 に実行されるGS2-Schedule のイベント名
         :type release_condition_schedule_event_name: unicode
         """
-        if release_condition_schedule_event_name and not (isinstance(release_condition_schedule_event_name, str) or isinstance(release_condition_schedule_event_name, unicode)):
+        if release_condition_schedule_event_name is not None and not (isinstance(release_condition_schedule_event_name, str) or isinstance(release_condition_schedule_event_name, unicode)):
             raise TypeError(type(release_condition_schedule_event_name))
         self.__release_condition_schedule_event_name = release_condition_schedule_event_name
 
@@ -280,7 +280,7 @@ class CreateShowcaseItemMasterRequest(Gs2BasicRequest):
         :param priority: 応答順序優先度
         :type priority: int
         """
-        if priority and not isinstance(priority, int):
+        if priority is not None and not isinstance(priority, int):
             raise TypeError(type(priority))
         self.__priority = priority
 

@@ -61,7 +61,7 @@ class UpdateShowcaseRequest(Gs2BasicRequest):
         :param showcase_name: ショーケースの名前
         :type showcase_name: unicode
         """
-        if showcase_name and not (isinstance(showcase_name, str) or isinstance(showcase_name, unicode)):
+        if showcase_name is not None and not (isinstance(showcase_name, str) or isinstance(showcase_name, unicode)):
             raise TypeError(type(showcase_name))
         self.__showcase_name = showcase_name
 
@@ -90,7 +90,7 @@ class UpdateShowcaseRequest(Gs2BasicRequest):
         :param description: 説明文
         :type description: unicode
         """
-        if description and not (isinstance(description, str) or isinstance(description, unicode)):
+        if description is not None and not (isinstance(description, str) or isinstance(description, unicode)):
             raise TypeError(type(description))
         self.__description = description
 
@@ -119,7 +119,7 @@ class UpdateShowcaseRequest(Gs2BasicRequest):
         :param release_condition_trigger_script: 公開許可判定 に実行されるGS2-Script
         :type release_condition_trigger_script: unicode
         """
-        if release_condition_trigger_script and not (isinstance(release_condition_trigger_script, str) or isinstance(release_condition_trigger_script, unicode)):
+        if release_condition_trigger_script is not None and not (isinstance(release_condition_trigger_script, str) or isinstance(release_condition_trigger_script, unicode)):
             raise TypeError(type(release_condition_trigger_script))
         self.__release_condition_trigger_script = release_condition_trigger_script
 
@@ -148,7 +148,7 @@ class UpdateShowcaseRequest(Gs2BasicRequest):
         :param buy_trigger_script: 購入直前 に実行されるGS2-Script
         :type buy_trigger_script: unicode
         """
-        if buy_trigger_script and not (isinstance(buy_trigger_script, str) or isinstance(buy_trigger_script, unicode)):
+        if buy_trigger_script is not None and not (isinstance(buy_trigger_script, str) or isinstance(buy_trigger_script, unicode)):
             raise TypeError(type(buy_trigger_script))
         self.__buy_trigger_script = buy_trigger_script
 

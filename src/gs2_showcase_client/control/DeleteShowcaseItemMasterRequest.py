@@ -57,7 +57,7 @@ class DeleteShowcaseItemMasterRequest(Gs2BasicRequest):
         :param showcase_name: ショーケースの名前
         :type showcase_name: unicode
         """
-        if showcase_name and not (isinstance(showcase_name, str) or isinstance(showcase_name, unicode)):
+        if showcase_name is not None and not (isinstance(showcase_name, str) or isinstance(showcase_name, unicode)):
             raise TypeError(type(showcase_name))
         self.__showcase_name = showcase_name
 
@@ -86,7 +86,7 @@ class DeleteShowcaseItemMasterRequest(Gs2BasicRequest):
         :param category: 商品の種類
         :type category: unicode
         """
-        if category and not (isinstance(category, str) or isinstance(category, unicode)):
+        if category is not None and not (isinstance(category, str) or isinstance(category, unicode)):
             raise TypeError(type(category))
         self.__category = category
 
@@ -115,7 +115,7 @@ class DeleteShowcaseItemMasterRequest(Gs2BasicRequest):
         :param resource_id: 商品/商品グループ名
         :type resource_id: unicode
         """
-        if resource_id and not (isinstance(resource_id, str) or isinstance(resource_id, unicode)):
+        if resource_id is not None and not (isinstance(resource_id, str) or isinstance(resource_id, unicode)):
             raise TypeError(type(resource_id))
         self.__resource_id = resource_id
 

@@ -73,7 +73,7 @@ class UpdateShowcaseItemMasterRequest(Gs2BasicRequest):
         :param showcase_name: ショーケースの名前
         :type showcase_name: unicode
         """
-        if showcase_name and not (isinstance(showcase_name, str) or isinstance(showcase_name, unicode)):
+        if showcase_name is not None and not (isinstance(showcase_name, str) or isinstance(showcase_name, unicode)):
             raise TypeError(type(showcase_name))
         self.__showcase_name = showcase_name
 
@@ -102,7 +102,7 @@ class UpdateShowcaseItemMasterRequest(Gs2BasicRequest):
         :param category: 商品の種類
         :type category: unicode
         """
-        if category and not (isinstance(category, str) or isinstance(category, unicode)):
+        if category is not None and not (isinstance(category, str) or isinstance(category, unicode)):
             raise TypeError(type(category))
         self.__category = category
 
@@ -131,7 +131,7 @@ class UpdateShowcaseItemMasterRequest(Gs2BasicRequest):
         :param resource_id: 商品/商品グループ名
         :type resource_id: unicode
         """
-        if resource_id and not (isinstance(resource_id, str) or isinstance(resource_id, unicode)):
+        if resource_id is not None and not (isinstance(resource_id, str) or isinstance(resource_id, unicode)):
             raise TypeError(type(resource_id))
         self.__resource_id = resource_id
 
@@ -160,7 +160,7 @@ class UpdateShowcaseItemMasterRequest(Gs2BasicRequest):
         :param release_condition_type: 公開判定の種類
         :type release_condition_type: unicode
         """
-        if release_condition_type and not (isinstance(release_condition_type, str) or isinstance(release_condition_type, unicode)):
+        if release_condition_type is not None and not (isinstance(release_condition_type, str) or isinstance(release_condition_type, unicode)):
             raise TypeError(type(release_condition_type))
         self.__release_condition_type = release_condition_type
 
@@ -189,7 +189,7 @@ class UpdateShowcaseItemMasterRequest(Gs2BasicRequest):
         :param release_condition_schedule_name: 公開許可判定 に実行されるGS2-Schedule
         :type release_condition_schedule_name: unicode
         """
-        if release_condition_schedule_name and not (isinstance(release_condition_schedule_name, str) or isinstance(release_condition_schedule_name, unicode)):
+        if release_condition_schedule_name is not None and not (isinstance(release_condition_schedule_name, str) or isinstance(release_condition_schedule_name, unicode)):
             raise TypeError(type(release_condition_schedule_name))
         self.__release_condition_schedule_name = release_condition_schedule_name
 
@@ -218,7 +218,7 @@ class UpdateShowcaseItemMasterRequest(Gs2BasicRequest):
         :param release_condition_schedule_event_name: 公開許可判定 に実行されるGS2-Schedule のイベント名
         :type release_condition_schedule_event_name: unicode
         """
-        if release_condition_schedule_event_name and not (isinstance(release_condition_schedule_event_name, str) or isinstance(release_condition_schedule_event_name, unicode)):
+        if release_condition_schedule_event_name is not None and not (isinstance(release_condition_schedule_event_name, str) or isinstance(release_condition_schedule_event_name, unicode)):
             raise TypeError(type(release_condition_schedule_event_name))
         self.__release_condition_schedule_event_name = release_condition_schedule_event_name
 
@@ -247,7 +247,7 @@ class UpdateShowcaseItemMasterRequest(Gs2BasicRequest):
         :param priority: 応答順序優先度
         :type priority: int
         """
-        if priority and not isinstance(priority, int):
+        if priority is not None and not isinstance(priority, int):
             raise TypeError(type(priority))
         self.__priority = priority
 

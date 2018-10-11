@@ -51,7 +51,7 @@ class GetItemRequest(Gs2UserRequest):
         :param showcase_name: ショーケースの名前
         :type showcase_name: unicode
         """
-        if showcase_name and not (isinstance(showcase_name, str) or isinstance(showcase_name, unicode)):
+        if showcase_name is not None and not (isinstance(showcase_name, str) or isinstance(showcase_name, unicode)):
             raise TypeError(type(showcase_name))
         self.__showcase_name = showcase_name
 
@@ -80,7 +80,7 @@ class GetItemRequest(Gs2UserRequest):
         :param showcase_item_id: 陳列商品のID
         :type showcase_item_id: unicode
         """
-        if showcase_item_id and not (isinstance(showcase_item_id, str) or isinstance(showcase_item_id, unicode)):
+        if showcase_item_id is not None and not (isinstance(showcase_item_id, str) or isinstance(showcase_item_id, unicode)):
             raise TypeError(type(showcase_item_id))
         self.__showcase_item_id = showcase_item_id
 

@@ -61,7 +61,7 @@ class CreateShowcaseRequest(Gs2BasicRequest):
         :param name: ショーケース名
         :type name: unicode
         """
-        if name and not (isinstance(name, str) or isinstance(name, unicode)):
+        if name is not None and not (isinstance(name, str) or isinstance(name, unicode)):
             raise TypeError(type(name))
         self.__name = name
 
@@ -90,7 +90,7 @@ class CreateShowcaseRequest(Gs2BasicRequest):
         :param description: 説明文
         :type description: unicode
         """
-        if description and not (isinstance(description, str) or isinstance(description, unicode)):
+        if description is not None and not (isinstance(description, str) or isinstance(description, unicode)):
             raise TypeError(type(description))
         self.__description = description
 
@@ -119,7 +119,7 @@ class CreateShowcaseRequest(Gs2BasicRequest):
         :param release_condition_trigger_script: 公開許可判定 に実行されるGS2-Script
         :type release_condition_trigger_script: unicode
         """
-        if release_condition_trigger_script and not (isinstance(release_condition_trigger_script, str) or isinstance(release_condition_trigger_script, unicode)):
+        if release_condition_trigger_script is not None and not (isinstance(release_condition_trigger_script, str) or isinstance(release_condition_trigger_script, unicode)):
             raise TypeError(type(release_condition_trigger_script))
         self.__release_condition_trigger_script = release_condition_trigger_script
 
@@ -148,7 +148,7 @@ class CreateShowcaseRequest(Gs2BasicRequest):
         :param buy_trigger_script: 購入直前 に実行されるGS2-Script
         :type buy_trigger_script: unicode
         """
-        if buy_trigger_script and not (isinstance(buy_trigger_script, str) or isinstance(buy_trigger_script, unicode)):
+        if buy_trigger_script is not None and not (isinstance(buy_trigger_script, str) or isinstance(buy_trigger_script, unicode)):
             raise TypeError(type(buy_trigger_script))
         self.__buy_trigger_script = buy_trigger_script
 
